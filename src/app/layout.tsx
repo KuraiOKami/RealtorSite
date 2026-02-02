@@ -26,7 +26,16 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {/* Hidden form for Netlify deploy bot detection */}
+        <form name="contact" data-netlify="true" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <textarea name="message" />
+        </form>
+        {children}
+      </body>
     </html>
   );
 }

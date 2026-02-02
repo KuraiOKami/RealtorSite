@@ -11,10 +11,14 @@ export default function Hero({
 }) {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    console.log("Lead form submission:", data);
+    const form = e.currentTarget;
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form) as never).toString(),
+    });
     setSubmitted(true);
   }
 
@@ -104,7 +108,14 @@ export default function Hero({
                 <p className="mb-6 text-sm text-white/50">
                   Tell me about your real estate goals.
                 </p>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
                   <input
                     name="name"
                     type="text"
