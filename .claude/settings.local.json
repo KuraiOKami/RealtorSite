@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app:*)",
+      "Bash(where:*)",
+      "Bash(where npm)",
+      "Bash(where npx:*)",
+      "Bash(cmd /c \"where node && where npm && where npx\")",
+      "Bash(cmd /c \"node --version\")",
+      "Bash(powershell -Command:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects''; npx create-next-app@latest imrealtor --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; npm init -y\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd 'c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor'; npm install next@latest react@latest react-dom@latest\":*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd 'c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor'; npm install -D typescript @types/react @types/node tailwindcss @tailwindcss/postcss postcss\":*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; npx next build\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd 'c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor'; npm install -D @netlify/plugin-nextjs\":*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git remote add origin https://github.com/KuraiOKami/RealtorSite.git; git add -A; git commit -m ''Initial commit: IMRealtor landing page''; git branch -M main; git push -u origin main\")"
+    ]
+  }
+}

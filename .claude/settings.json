@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git init && git add -A && git commit -m ''Initial commit: IMRealtor landing page''\")"
+    ]
+  }
+}
