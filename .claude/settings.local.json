@@ -15,7 +15,11 @@
       "Bash(powershell -ExecutionPolicy Bypass -Command \"cd 'c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor'; npm install -D typescript @types/react @types/node tailwindcss @tailwindcss/postcss postcss\":*)",
       "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; npx next build\")",
       "Bash(powershell -ExecutionPolicy Bypass -Command \"cd 'c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor'; npm install -D @netlify/plugin-nextjs\":*)",
-      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git remote add origin https://github.com/KuraiOKami/RealtorSite.git; git add -A; git commit -m ''Initial commit: IMRealtor landing page''; git branch -M main; git push -u origin main\")"
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git remote add origin https://github.com/KuraiOKami/RealtorSite.git; git add -A; git commit -m ''Initial commit: IMRealtor landing page''; git branch -M main; git push -u origin main\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git status\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git diff --staged; git diff\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git log --oneline -3\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"cd ''c:\\\\Users\\\\banch\\\\Desktop\\\\Projects\\\\IMRealtor''; git add src/app/layout.tsx src/components/Hero.tsx public/__forms.html; git commit -m ''Fix Netlify Forms: use static HTML detection for plugin v5\n\nMoved form detection to public/__forms.html, POST to static file,\nand removed data-netlify attributes from React components.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>''; git push\")"
     ]
   }
 }
