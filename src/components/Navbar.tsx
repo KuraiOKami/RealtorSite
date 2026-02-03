@@ -25,6 +25,12 @@ export default function Navbar({ onContact }: { onContact: () => void }) {
           >
             Services
           </a>
+          <a
+            href="#home-value"
+            className="hidden text-sm text-white/70 transition hover:text-white md:inline"
+          >
+            Home Value
+          </a>
           <button
             onClick={onContact}
             className="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-navy transition hover:bg-gold-light"

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import HomeValue from "@/components/HomeValue";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero showForm={showForm} setShowForm={setShowForm} />
         <About />
         <Services />
+        <HomeValue />
       </main>
       <Footer />
     </>
