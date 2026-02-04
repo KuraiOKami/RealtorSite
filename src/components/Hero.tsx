@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero({
   showForm,
@@ -10,6 +11,7 @@ export default function Hero({
   setShowForm: (v: boolean) => void;
 }) {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,18 +36,18 @@ export default function Hero({
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-6xl text-center">
           <p className="mb-6 text-sm font-medium uppercase tracking-[0.3em] text-gold/80">
-            La Rosa Realty &mdash; Polk County &amp; All of Florida
+            {t("hero.tagline")}
           </p>
 
           {/* Big bold name */}
           <h1 className="font-heading text-[clamp(3rem,10vw,9rem)] font-bold leading-[0.9] tracking-tight">
-            IVAN
+            {t("hero.firstName")}
             <br />
-            <span className="text-gold">MARTINEZ</span>
+            <span className="text-gold">{t("hero.lastName")}</span>
           </h1>
 
           <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-white/50 sm:text-xl">
-            Helping you buy, sell, and find your place in Florida.
+            {t("hero.subtitle")}
           </p>
 
           {/* CTA buttons */}
@@ -54,13 +56,13 @@ export default function Hero({
               onClick={() => setShowForm(true)}
               className="rounded-full bg-gold px-10 py-4 text-sm font-bold uppercase tracking-wider text-navy transition hover:bg-gold-light"
             >
-              Get in Touch
+              {t("hero.cta")}
             </button>
             <a
               href="#about"
               className="rounded-full border border-white/20 px-10 py-4 text-sm font-bold uppercase tracking-wider text-white/70 transition hover:border-white/40 hover:text-white"
             >
-              Learn More
+              {t("hero.learnMore")}
             </a>
           </div>
         </div>
@@ -68,7 +70,7 @@ export default function Hero({
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <div className="flex flex-col items-center gap-2 text-white/30">
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
+            <span className="text-xs uppercase tracking-widest">{t("hero.scroll")}</span>
             <div className="h-8 w-px bg-gradient-to-b from-white/30 to-transparent" />
           </div>
         </div>
@@ -94,19 +96,19 @@ export default function Hero({
               <div className="py-12 text-center">
                 <div className="mb-4 text-5xl text-gold">&#10003;</div>
                 <h3 className="font-heading text-2xl font-bold text-gold">
-                  Thank you!
+                  {t("contact.thanks")}
                 </h3>
                 <p className="mt-2 text-white/60">
-                  I&rsquo;ll be in touch shortly.
+                  {t("contact.thanksMsg")}
                 </p>
               </div>
             ) : (
               <>
                 <h2 className="mb-1 font-heading text-2xl font-bold">
-                  Let&rsquo;s Connect
+                  {t("contact.title")}
                 </h2>
                 <p className="mb-6 text-sm text-white/50">
-                  Tell me about your real estate goals.
+                  {t("contact.subtitle")}
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <input type="hidden" name="form-name" value="contact" />
@@ -114,33 +116,33 @@ export default function Hero({
                     name="name"
                     type="text"
                     required
-                    placeholder="Full name"
+                    placeholder={t("contact.name")}
                     className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                   />
                   <input
                     name="email"
                     type="email"
                     required
-                    placeholder="Email address"
+                    placeholder={t("contact.email")}
                     className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                   />
                   <input
                     name="phone"
                     type="tel"
-                    placeholder="Phone number"
+                    placeholder={t("contact.phone")}
                     className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                   />
                   <textarea
                     name="message"
                     rows={3}
-                    placeholder="How can I help you?"
+                    placeholder={t("contact.message")}
                     className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                   />
                   <button
                     type="submit"
                     className="w-full rounded-lg bg-gold py-3 text-sm font-semibold text-navy transition hover:bg-gold-light"
                   >
-                    Get in Touch
+                    {t("contact.submit")}
                   </button>
                 </form>
               </>

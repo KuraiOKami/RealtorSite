@@ -1,4 +1,10 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="px-6 py-24">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-20">
@@ -12,36 +18,30 @@ export default function About() {
         {/* Bio */}
         <div className="flex flex-col justify-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold">
-            About Me
+            {t("about.label")}
           </p>
           <h2 className="font-heading text-3xl font-bold sm:text-4xl">
-            Ivan Martinez
+            {t("about.name")}
           </h2>
-          <p className="mt-1 text-white/50">Realtor&reg; &middot; La Rosa Realty</p>
+          <p className="mt-1 text-white/50">{t("about.title")}</p>
           <p className="mt-6 leading-relaxed text-white/70">
-            I&rsquo;m a Florida-based realtor with deep roots in Polk County and
-            a reach that extends across the entire state. My approach is
-            simple: listen first, then deliver results. Whether you&rsquo;re a
-            first-time buyer navigating the market or a seller looking for top
-            dollar, I bring the local knowledge and statewide connections to
-            make your real estate goals a reality.
+            {t("about.bio1")}
           </p>
           <p className="mt-4 leading-relaxed text-white/70">
-            I believe everyone deserves a place to call home &mdash; and I work
-            tirelessly to make that happen for every client I serve.
+            {t("about.bio2")}
           </p>
           <div className="mt-8 flex gap-8">
             <div>
               <p className="font-heading text-3xl font-bold text-gold">FL</p>
-              <p className="text-sm text-white/50">Statewide</p>
+              <p className="text-sm text-white/50">{t("about.statewide")}</p>
             </div>
             <div>
               <p className="font-heading text-3xl font-bold text-gold">Polk</p>
-              <p className="text-sm text-white/50">Home County</p>
+              <p className="text-sm text-white/50">{t("about.homeCounty")}</p>
             </div>
             <div>
               <p className="font-heading text-3xl font-bold text-gold">100%</p>
-              <p className="text-sm text-white/50">Client-First</p>
+              <p className="text-sm text-white/50">{t("about.clientFirst")}</p>
             </div>
           </div>
         </div>

@@ -1,40 +1,42 @@
-const services = [
-  {
-    icon: "🏡",
-    title: "Buy a Home",
-    description:
-      "From your first home to your forever home, I'll guide you through every step of the buying process across Florida.",
-  },
-  {
-    icon: "💰",
-    title: "Sell Your Home",
-    description:
-      "Strategic pricing, professional marketing, and skilled negotiation to get you the best return on your investment.",
-  },
-  {
-    icon: "📊",
-    title: "Market Analysis",
-    description:
-      "Data-driven insights on property values, market trends, and neighborhood comparisons to inform your decisions.",
-  },
-  {
-    icon: "🚚",
-    title: "Relocation Help",
-    description:
-      "Moving to Florida? I'll help you find the right community, school district, and home — no matter where in the state.",
-  },
-];
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: "🏡",
+      title: t("services.buy"),
+      description: t("services.buyDesc"),
+    },
+    {
+      icon: "💰",
+      title: t("services.sell"),
+      description: t("services.sellDesc"),
+    },
+    {
+      icon: "📊",
+      title: t("services.market"),
+      description: t("services.marketDesc"),
+    },
+    {
+      icon: "🚚",
+      title: t("services.relocation"),
+      description: t("services.relocationDesc"),
+    },
+  ];
+
   return (
     <section id="services" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold">
-            What I Offer
+            {t("services.label")}
           </p>
           <h2 className="font-heading text-3xl font-bold sm:text-4xl">
-            Services
+            {t("services.title")}
           </h2>
         </div>
 

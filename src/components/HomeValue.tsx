@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function HomeValue() {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,29 +29,27 @@ export default function HomeValue() {
           {/* Copy */}
           <div className="flex flex-col justify-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold">
-              For Sellers
+              {t("homeValue.label")}
             </p>
             <h2 className="font-heading text-4xl font-bold leading-tight sm:text-5xl">
-              What&rsquo;s Your Home{" "}
-              <span className="text-gold">Worth?</span>
+              {t("homeValue.title")}{" "}
+              <span className="text-gold">{t("homeValue.titleHighlight")}</span>
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/60">
-              Thinking about selling? Get a free, no-obligation market analysis
-              of your property. I&rsquo;ll provide you with a detailed report on
-              your home&rsquo;s current value based on recent sales in your area.
+              {t("homeValue.description")}
             </p>
             <div className="mt-8 flex gap-6">
               <div>
-                <p className="font-heading text-2xl font-bold text-gold">Free</p>
-                <p className="text-sm text-white/50">No obligation</p>
+                <p className="font-heading text-2xl font-bold text-gold">{t("homeValue.free")}</p>
+                <p className="text-sm text-white/50">{t("homeValue.noObligation")}</p>
               </div>
               <div>
-                <p className="font-heading text-2xl font-bold text-gold">24hr</p>
-                <p className="text-sm text-white/50">Response time</p>
+                <p className="font-heading text-2xl font-bold text-gold">{t("homeValue.response")}</p>
+                <p className="text-sm text-white/50">{t("homeValue.responseTime")}</p>
               </div>
               <div>
-                <p className="font-heading text-2xl font-bold text-gold">CMA</p>
-                <p className="text-sm text-white/50">Detailed report</p>
+                <p className="font-heading text-2xl font-bold text-gold">{t("homeValue.cma")}</p>
+                <p className="text-sm text-white/50">{t("homeValue.detailedReport")}</p>
               </div>
             </div>
           </div>
@@ -61,19 +61,19 @@ export default function HomeValue() {
                 <div className="py-12 text-center">
                   <div className="mb-4 text-5xl text-gold">&#10003;</div>
                   <h3 className="font-heading text-2xl font-bold text-gold">
-                    Request Received!
+                    {t("homeValue.thanks")}
                   </h3>
                   <p className="mt-2 text-white/60">
-                    I&rsquo;ll send your home valuation within 24 hours.
+                    {t("homeValue.thanksMsg")}
                   </p>
                 </div>
               ) : (
                 <>
                   <h3 className="mb-1 font-heading text-xl font-bold">
-                    Get Your Free Valuation
+                    {t("homeValue.formTitle")}
                   </h3>
                   <p className="mb-6 text-sm text-white/50">
-                    Tell me about your property.
+                    {t("homeValue.formSubtitle")}
                   </p>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <input type="hidden" name="form-name" value="home-value" />
@@ -81,27 +81,27 @@ export default function HomeValue() {
                       name="name"
                       type="text"
                       required
-                      placeholder="Full name"
+                      placeholder={t("contact.name")}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                     />
                     <input
                       name="email"
                       type="email"
                       required
-                      placeholder="Email address"
+                      placeholder={t("contact.email")}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                     />
                     <input
                       name="phone"
                       type="tel"
-                      placeholder="Phone number"
+                      placeholder={t("contact.phone")}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                     />
                     <input
                       name="address"
                       type="text"
                       required
-                      placeholder="Property address"
+                      placeholder={t("homeValue.address")}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                     />
                     <div className="grid grid-cols-2 gap-4">
@@ -109,7 +109,7 @@ export default function HomeValue() {
                         name="bedrooms"
                         type="number"
                         min="0"
-                        placeholder="Bedrooms"
+                        placeholder={t("homeValue.bedrooms")}
                         className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                       />
                       <input
@@ -117,21 +117,21 @@ export default function HomeValue() {
                         type="number"
                         min="0"
                         step="0.5"
-                        placeholder="Bathrooms"
+                        placeholder={t("homeValue.bathrooms")}
                         className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                       />
                     </div>
                     <textarea
                       name="notes"
                       rows={2}
-                      placeholder="Any updates or features? (optional)"
+                      placeholder={t("homeValue.notes")}
                       className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-gold"
                     />
                     <button
                       type="submit"
                       className="w-full rounded-lg bg-gold py-3 text-sm font-semibold text-navy transition hover:bg-gold-light"
                     >
-                      Get My Home Value
+                      {t("homeValue.submit")}
                     </button>
                   </form>
                 </>
