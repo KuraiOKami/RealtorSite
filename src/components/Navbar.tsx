@@ -38,6 +38,12 @@ export default function Navbar({ onContact }: { onContact: () => void }) {
           >
             {t("nav.homeValue")}
           </Link>
+          <Link
+            href="/first-time-buyer"
+            className="hidden text-sm text-white/70 transition hover:text-white lg:inline"
+          >
+            {t("nav.firstTime")}
+          </Link>
           <button
             onClick={onContact}
             className="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-navy transition hover:bg-gold-light"
