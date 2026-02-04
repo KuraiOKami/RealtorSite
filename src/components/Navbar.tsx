@@ -20,12 +20,12 @@ export default function Navbar({ onContact }: { onContact: () => void }) {
 
         <div className="flex items-center gap-4 md:gap-6">
           <LanguageToggle />
-          <a
-            href="#about"
+          <Link
+            href="/about"
             className="hidden text-sm text-white/70 transition hover:text-white md:inline"
           >
             {t("nav.about")}
-          </a>
+          </Link>
           <a
             href="#services"
             className="hidden text-sm text-white/70 transition hover:text-white md:inline"
